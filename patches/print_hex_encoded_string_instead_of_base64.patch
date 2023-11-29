@@ -1,0 +1,54 @@
+diff --git a/server/src/main/java/com/android/example/KeyAttestationExample.java b/server/src/main/java/com/android/example/KeyAttestationExample.java
+index 4f2a356..347d8dd 100644
+--- a/server/src/main/java/com/android/example/KeyAttestationExample.java
++++ b/server/src/main/java/com/android/example/KeyAttestationExample.java
+@@ -172,15 +172,28 @@ public class KeyAttestationExample {
+         indent + "Identity Credential Key: " + authorizationList.identityCredentialKey);
+   }
+ 
++  private static String convertBytesToHexString(byte[] bytes) {
++    StringBuilder sb = new StringBuilder();
++    for (byte b : bytes) {
++      sb.append(String.format("%02x", b));
++    }
++    return sb.toString();
++  }
++
+   private static void print(RootOfTrust rootOfTrust, String indent) {
++    //System.out.println(
++    //    indent + "Verified Boot Key: " + Base64.toBase64String(rootOfTrust.verifiedBootKey));
+     System.out.println(
+-        indent + "Verified Boot Key: " + Base64.toBase64String(rootOfTrust.verifiedBootKey));
++        indent + "Verified Boot Key: " + convertBytesToHexString(rootOfTrust.verifiedBootKey));
+     System.out.println(indent + "Device Locked: " + rootOfTrust.deviceLocked);
+     System.out.println(indent + "Verified Boot State: " + rootOfTrust.verifiedBootState.name());
+     rootOfTrust.verifiedBootHash.ifPresent(
+         verifiedBootHash ->
++            //System.out.println(
++            //    indent + "Verified Boot Hash: " + Base64.toBase64String(verifiedBootHash))
+             System.out.println(
+-                indent + "Verified Boot Hash: " + Base64.toBase64String(verifiedBootHash)));
++                indent + "VBMeta Digest: " + convertBytesToHexString(verifiedBootHash))
++          );
+   }
+ 
+   private static void print(AttestationApplicationId attestationApplicationId, String indent) {
+@@ -190,14 +203,16 @@ public class KeyAttestationExample {
+       }
+       System.out.println(indent + "Signature Digests:");
+     for (byte[] digest : attestationApplicationId.signatureDigests) {
+-      System.out.println(indent + "\t" + Base64.toBase64String(digest));
++      //System.out.println(indent + "\t" + Base64.toBase64String(digest));
++      System.out.println(indent + "\t" + convertBytesToHexString(digest));
+     }
+   }
+ 
+   private static <T> void print(Optional<T> optional, String caption) {
+     if (optional.isPresent()) {
+       if (optional.get() instanceof byte[]) {
+-        System.out.println(caption + ": " + Base64.toBase64String((byte[]) optional.get()));
++        //System.out.println(caption + ": " + Base64.toBase64String((byte[]) optional.get()));
++        System.out.println(caption + ": " + convertBytesToHexString((byte[]) optional.get()));
+       } else {
+         System.out.println(caption + ": " + optional.get());
+       }
