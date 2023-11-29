@@ -1,0 +1,6 @@
+[submodule "avb"]
+	path = avb
+	url = https://android.googlesource.com/platform/external/avb
+[submodule "android-key-attestation"]
+	path = android-key-attestation
+	url = https://github.com/google/android-key-attestation
