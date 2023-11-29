@@ -6,7 +6,7 @@ A brief summary of what this repository contains:
 - [demo (youtube)](https://youtu.be/r-Hpd3FvnT0)
 - patch for the [android-key-attestation](https://github.com/google/android-key-attestation) repository.
 - link to the [Android Verified Boot (AVB)](https://android.googlesource.com/platform/external/avb) repository
-- directory containing example implementation of an app that makes use of Android Key Attestatation.
+- directory containing example implementation of an app that makes use of [Android Key Attestation](https://developer.android.com/privacy-and-security/security-key-attestation).
   - contains source code that can be built using Android Studio
   - contains a pre-built **debug** app that can be a installed straight to an Android device using the following command `adb install -t KeyAttestationIdExtractor-debug.apk`
   - the app can be invoked/launched after installation using this command: `adb shell am start -a android.intent.action.SEND -t text --es nonce [insert_random_string] -n com.test.keyattestationidextractor/.MainActivity`
