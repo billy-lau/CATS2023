@@ -2,7 +2,7 @@
 A repository for all material presented during `The Odyssey: Android's First Firmware Binary Transparency via Pixel.` talk at the 1st Workshop on Cryptography Applied to Transparency Systems ([CATS2023](https://catsworkshop.dev/program/)).
 
 A brief summary of what this repository contains:
-- [slides](https://docs.google.com/presentation/d/1FGEpyknEcqsjllEjNXN5I56c4BDSspFOlISKDIyj3gc/edit?usp=sharing&resourcekey=0-cQBC3P28CdYFsB2tvDIWPg)
+- [slides](https://docs.google.com/presentation/d/e/2PACX-1vRdqJPSuBAJRqqwamXcDguAKv8xJQIn1HNKLgMF8VqrZmOaqXLstilj0OY5oJGefUBtUz6RFGCVeNUk/pub?start=false&loop=false)
 - [demo (youtube)](https://youtu.be/r-Hpd3FvnT0)
 - [a patch](patches/print_hex_encoded_string_instead_of_base64.patch) that can be applied to the copy of the [android-key-attestation](https://github.com/google/android-key-attestation) repository.
 - link to the [Android Verified Boot (AVB)](https://android.googlesource.com/platform/external/avb) repository from AOSP.
