@@ -25,7 +25,6 @@ import android.security.keystore.KeyGenParameterSpec;
 import android.security.keystore.KeyProperties;
 import android.util.Log;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidAlgorithmParameterException;
@@ -242,6 +241,5 @@ public class MainActivity extends AppCompatActivity {
         } catch (KeyStoreException e) {
             Log.e(tag, "Keystore has not been initialized?", e);
         }
-        return;
     }
 }
